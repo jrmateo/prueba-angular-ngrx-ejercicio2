@@ -11,7 +11,7 @@ El formulario deberá tener los siguientes campos, todos obligatorios:
 - Telefono
 - Contraseña
 
-** Hay que tener en cuenta las diferentes validaciones. Lo ideal sería que esta pantalla cargase en una nueva ruta '/register' **
+**Hay que tener en cuenta las diferentes validaciones. Lo ideal sería que esta pantalla cargase en una nueva ruta '/register'**
 
 ## Ejercicio 2 (Básico)
 
@@ -25,4 +25,4 @@ Una vez tengamos la respuesta mockeada del backend, procederemos a crear toda la
 
 En una nueva pantalla mostraremos la información del usuario logado que estamos almacenando en el store
 
-** Para la maquetación es obligatorio utilizar los componentes de PrimeNG. La librería ya está importada y lista para usar **
+**Para la maquetación es obligatorio utilizar los componentes de PrimeNG. La librería ya está importada y lista para usar**
