@@ -1,4 +1,4 @@
-# TEST ANGULAR + NGRX para perfiles Junior
+# TEST ANGULAR + NGRX
 
 ## Ejercicio 1 (Básico)
 
