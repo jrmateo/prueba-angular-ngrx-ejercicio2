@@ -10,7 +10,8 @@ El formulario deberá tener los siguientes campos, todos obligatorios:
 - Email
 - Telefono
 - Contraseña
-  ** Hay que tener en cuenta las diferentes validaciones. Lo ideal sería que esta pantalla cargase en una nueva ruta '/register' **
+
+** Hay que tener en cuenta las diferentes validaciones. Lo ideal sería que esta pantalla cargase en una nueva ruta '/register' **
 
 ## Ejercicio 2 (Básico)
 
