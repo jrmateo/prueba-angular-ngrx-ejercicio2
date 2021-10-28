@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { StoreModule } from '@ngrx/store';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule  } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -36,7 +36,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
     InputTextModule,
     ButtonModule,
     FormsModule,
-    InputNumberModule
+    ReactiveFormsModule,
+    InputNumberModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
