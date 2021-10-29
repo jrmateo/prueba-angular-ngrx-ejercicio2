@@ -1,38 +1,39 @@
 <div class="row">
     <div class="card">
-        <h3>Registro</h3>
+        <h2>Registro</h2>
         <form [formGroup]="formularioRegistro" (ngSubmit)="enviar()">
             <div class="p-fluid">
                 <div class="field">
                     <label for="nombre">Nombre</label>
                     <input id="nombre" type="text" formControlName="nombre" pInputText> 
-                    <span class="msgError"*ngIf="campoEsValido('nombre')">El campo Nombre es requerido</span>
+                    <span class="msgError"*ngIf="campoEsInvalido('nombre')">El campo Nombre es requerido</span>
                 </div>
                 <div class="field">
                     <label for="apellidos">Apellidos</label>
                     <input id="apellidos" type="text" formControlName="apellidos" pInputText> 
-                    <span class="msgError" *ngIf="campoEsValido('apellidos')">El campo Apellidos es requerido</span>
+                    <span class="msgError" *ngIf="campoEsInvalido('apellidos')">El campo Apellidos es requerido</span>
                 </div>
                 <div class="field">
                     <label for="email">Email</label>
                     <input id="email" type="email" formControlName="email" pInputText> 
-                    <span class="msgError" *ngIf="campoEsValido('email')">Debe introducir un email válido</span>
+                    <span class="msgError" *ngIf="campoEsInvalido('email')">Debe introducir un email válido</span>
                 </div>
                 <div class="field">
                     <label for="telefono">Teléfono</label>
                     <input id="telefono" type="text" formControlName="telefono" pInputText> 
-                    <span class="msgError" *ngIf="campoEsValido('telefono')">Debe introducir un teléfono válido</span>
+                    <span class="msgError" *ngIf="campoEsInvalido('telefono')">Debe introducir un teléfono válido</span>
                 </div>
                 <div class="field">
                     <label for="contrasena">Contraseña</label>
                     <input id="contrasena" type="password" formControlName="contrasena" pInputText> 
-                    <span class="msgError" *ngIf="campoEsValido('contrasena')">
+                    <span class="msgError" *ngIf="campoEsInvalido('contrasena')">
                         La contraseña debe contener al menos ocho caracteres, incluidos al menos 1 letra mayúscula, 1 número y un caracter especial
                     </span>
                 </div>
             </div>
-            <div class=" p-grid">
-                <p-button type="submit" label="Enviar" class="p-d-block p-mx-auto"></p-button>
+            <div class="p-grid p-mt-5">
+                <button pButton pRipple type="button" label="Reset" class="p-button-outlined p-d-block p-mx-auto" (click)="reset()"></button>
+                <button pButton pRipple type="submit" label="Enviar" class="p-d-block p-mx-auto"></button>
             </div>
         </form>
     </div>

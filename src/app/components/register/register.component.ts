@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Validators, FormBuilder, FormGroup } from '@angular/forms';
-import { MessageService } from 'primeng/api';
 
 @Component({
   selector: 'app-register',
@@ -9,25 +8,22 @@ import { MessageService } from 'primeng/api';
 })
 export class RegisterComponent implements OnInit {
   
-  resultado: string = '';
-
-
   formularioRegistro: FormGroup = this.fb.group({
-    nombre: [ '', Validators.required ],
-    apellidos: [ '', Validators.required ],
+    nombre: [ '', [ Validators.required, Validators.minLength(3) ] ],
+    apellidos: [ '', [ Validators.required, Validators.minLength(3) ] ],
     email: [ '', [ Validators.required, Validators.email ] ],
     telefono: [ '', [ Validators.required, Validators.pattern("^[0-9]{9}$") ] ],
     contrasena: ['', [ Validators.required, Validators.minLength(6), Validators.pattern("^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$") ]]
   });
 
-  constructor( private fb: FormBuilder, private messageService: MessageService ) { 
+  constructor( private fb: FormBuilder ) { 
   }
 
   ngOnInit(): void {
   }
 
 
-  campoEsValido( campo: string ){
+  campoEsInvalido( campo: string ){
     return this.formularioRegistro.controls[campo].errors && this.formularioRegistro.controls[campo].touched;
   }
 
@@ -39,14 +35,11 @@ export class RegisterComponent implements OnInit {
   enviar() {
     if (this.formularioRegistro.invalid) {
       this.formularioRegistro.markAllAsTouched();
-      this.resultado = "Todos los datos son válidos";
-    } else {
-      this.resultado = "Hay datos inválidos en el formulario";
-    }
+    } 
   }
   
   reset() {
-    //this.formularioRegistro.reset();
+    this.formularioRegistro.reset();
   }
 
 }
